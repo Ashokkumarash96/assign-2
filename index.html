@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Change the Size of Font</title>
+    <!-- Favicon Link -->
+    <link rel="icon" type="image/x-icon" href="./assets/images/favicon.png" />
+    <!-- FontAwesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="./styles/normalize.css" />
+    <!-- custom css -->
+    <style>
+      body{
+        height: 100vh;
+        background-image: -webkit-radial-gradient(#3d355c, #414c7b, #5e3d80);
+        background-repeat: no-repeat;
+border-color: #5e3d80;
+      }
+      input{
+        margin-top: 10rem;
+        margin-left: 40%;
+        font-size: xx-large;
+        font-weight: 400;
+        border-radius: 10px;
+      }
+       button{
+        margin-top: 10rem;
+        font-size: xx-large;
+        font-weight: 400;
+        border-radius: 10px;
+      }
+      div{
+        color: white;
+      margin-top: 10rem;
+        margin-left: 40%;
+        font-size: xx-large;
+        font-weight: 400;
+        border-radius: 10px;  
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" placeholder="Enter the text" id="input" />
+        <button id="show">Submit</button>
+        <button id="plus">+</button>
+        <button id="minus">-</button>
+        <div id="output"></div>
+    </div>
+<!-- custom script -->  
+<script>
+//variable
+const input = document.querySelector("#input")
+const plusButton = document.querySelector("#plus")
+const showButton = document.querySelector("#show")
+const minusButton = document.querySelector("#minus")
+const output = document.querySelector("#output")
+
+//global variable
+let numberOfPixels = 32
+
+//function
+function plusHandler() {
+    numberOfPixels += 2
+    output.style.fontSize = `${numberOfPixels}px`
+}
+
+function minusHandler() {
+    numberOfPixels -= 2
+    output.style.fontSize = `${numberOfPixels}px`
+}
+
+function showOutput() {
+    output.style.fontSize = `${numberOfPixels}px`
+    output.innerText = input.value
+}
+
+//event listener
+showButton.addEventListener('click', showOutput)
+
+plusButton.addEventListener('click', plusHandler)
+
+minusButton.addEventListener('click', minusHandler)
+
+</script>
+</body>
+</html>
